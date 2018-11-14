@@ -1,22 +1,22 @@
-spring:
-  application:
-    name: api-gateway
-server:
-  port: 1004
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:1001/eureka/
-  instance:
-    instance-id: ${spring.cloud.client.ip-address}:${server.port}
-    hostname: ${spring.cloud.client.ip-address}
-
-zuul:
-  ignored-services: eureka-client
-  prefix: /jk
-  strip-prefix: true
-  routes:
-    eureka-client: /eureka/consumer/**
-    eureka-consumer-feign: /eureka/**
+#spring:
+#  application:
+#    name: api-gateway
+#server:
+#  port: 1004
+#
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:1001/eureka/
+#  instance:
+#    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+#    hostname: ${spring.cloud.client.ip-address}
+#
+#zuul:
+#  ignored-services: eureka-client
+#  prefix: /jk
+#  strip-prefix: true
+#  routes:
+#    eureka-client: /eureka/consumer/**
+#    eureka-consumer-feign: /eureka/**
 

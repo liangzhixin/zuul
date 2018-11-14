@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @Component
 @Slf4j
-public class AccessFilter extends ZuulFilter {
+public class PreFilter extends ZuulFilter {
 
     /**
      * 该函数需要返回一个字符串来代表过滤器的类型,Zuul中默认定义了四种不同生命周期的过滤器类型:
@@ -41,7 +41,7 @@ public class AccessFilter extends ZuulFilter {
      */
     @Override
     public boolean shouldFilter() {
-        return true;
+        return false;
     }
 
     /**
